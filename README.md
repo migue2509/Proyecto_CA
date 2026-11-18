@@ -2,7 +2,7 @@
 
 ## Video
 
-Enlace al video: PENDIENTE (YouTube no listado o Google Drive)
+Enlace al video: [Google Drive)](https://drive.google.com/file/d/1LLDzC562r0IdhrzqO6V1BRac9XoFmwTx/view?usp=sharing)
 
 
 **Computación Avanzada — Cierre del curso**

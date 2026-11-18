@@ -1,0 +1,83 @@
+:root {
+  --fondo: #f5f6f8;
+  --tarjeta: #ffffff;
+  --texto: #1d2330;
+  --suave: #5f6878;
+  --borde: #e3e6eb;
+  --acento: #1f6feb;
+  --real: #2b3446;
+  --error-f: #fdecec;
+  --error-t: #9b1c1c;
+  --aviso-f: #fff6e0;
+  --aviso-t: #7a5300;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+}
+header {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: 1.25rem 2rem; background: var(--tarjeta); border-bottom: 1px solid var(--borde);
+}
+h1 { margin: 0; font-size: 1.4rem; }
+h2 { margin: 0 0 .75rem; font-size: 1rem; }
+.sub { margin: .25rem 0 0; color: var(--suave); font-size: .9rem; }
+.pill {
+  padding: .35rem .8rem; border-radius: 999px; font-size: .8rem; font-weight: 600;
+  background: #eef1f5; color: var(--suave); white-space: nowrap;
+}
+.pill.ok { background: #e4f4ea; color: #17633a; }
+.pill.mal { background: var(--error-f); color: var(--error-t); }
+main { max-width: 1150px; margin: 0 auto; padding: 1.5rem 2rem 2.5rem; }
+
+.controles {
+  display: flex; flex-wrap: wrap; align-items: flex-end; gap: 1.25rem;
+  background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 12px;
+  padding: 1rem 1.25rem; margin-bottom: 1rem;
+}
+.controles label { display: flex; flex-direction: column; gap: .35rem; font-size: .8rem; color: var(--suave); font-weight: 600; }
+.rango { display: flex; align-items: center; gap: .6rem; }
+.rango input { width: 180px; accent-color: var(--acento); }
+output { font-weight: 700; color: var(--texto); min-width: 3rem; font-size: .95rem; }
+select, button {
+  font: inherit; font-size: .9rem; padding: .45rem .75rem; border-radius: 8px;
+  border: 1px solid var(--borde); background: #fff; color: var(--texto); cursor: pointer;
+}
+.rapidos { display: flex; gap: .35rem; }
+.rapidos button.activo { border-color: var(--acento); color: var(--acento); font-weight: 600; }
+button.primario { background: var(--acento); border-color: var(--acento); color: #fff; font-weight: 600; margin-left: auto; }
+button:disabled { opacity: .6; cursor: wait; }
+
+.error {
+  background: var(--error-f); color: var(--error-t); border: 1px solid #f3c4c4;
+  border-radius: 10px; padding: .9rem 1.1rem; margin-bottom: 1rem; font-size: .92rem;
+}
+.error strong { display: block; margin-bottom: .2rem; }
+
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1rem; }
+.kpi { background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem 1.1rem; }
+.kpi h2 { font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--suave); margin-bottom: .4rem; }
+.kpi .valor { margin: 0; font-size: 1.7rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.kpi .detalle { margin: .25rem 0 0; font-size: .82rem; color: var(--suave); }
+.kpi.destacado { border-color: var(--acento); box-shadow: inset 4px 0 0 var(--acento); }
+
+.tarjeta { background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 1rem; }
+.tarjeta-cab { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.aviso { background: var(--aviso-f); color: var(--aviso-t); font-size: .8rem; padding: .3rem .7rem; border-radius: 8px; margin-bottom: .75rem; }
+.grafica { position: relative; height: 380px; }
+
+.tabla-envoltura { max-height: 320px; overflow: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; font-variant-numeric: tabular-nums; }
+th, td { text-align: right; padding: .5rem .75rem; border-bottom: 1px solid var(--borde); }
+th:first-child, td:first-child { text-align: left; }
+th { position: sticky; top: 0; background: var(--tarjeta); color: var(--suave); font-size: .78rem; text-transform: uppercase; }
+footer { color: var(--suave); font-size: .8rem; text-align: center; margin-top: 1.5rem; }
+
+@media (max-width: 800px) {
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+  header, main { padding-left: 1rem; padding-right: 1rem; }
+  button.primario { margin-left: 0; }
+}
